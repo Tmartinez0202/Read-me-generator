@@ -35,12 +35,25 @@ const questions = [
         {
             type: "input",
             message: "what command should be run to install dependencies",
-            default: "npm i",
-            name: "install"
+            name: "install",
+            default: "npm i"
         },
         {
-            
-        }
+            type: "input",
+            message: "What command should be run to run tests",
+            name: "test",
+            default: "npm test"
+        },
+        {
+            type: "input",
+            message: "What does the user need to know about using the repo",
+            name: "need to know"
+        },
+        {
+            type: "input",
+            message: "What does the user need to know about contributing to the repo",
+            name: "contribution"
+        },
 
     ])
 
@@ -57,3 +70,4 @@ function init() {
 
 // function call to initialize program
 init();
+
