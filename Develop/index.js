@@ -1,6 +1,9 @@
 // array of questions for user
 const inquirer = require("inquirer");
-
+const fs = require("fs");
+const generateMarkdown = require("./generateMarkdown.js");
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 
 
 
@@ -19,7 +22,7 @@ const questions = [
         {
             type: "input",
             message: "What is your project name",
-            name: "project"
+            name: "title"
         },
         {
             type: "input",
@@ -47,7 +50,7 @@ const questions = [
         {
             type: "input",
             message: "What does the user need to know about using the repo",
-            name: "need to know"
+            name: "needToKnow"
         },
         {
             type: "input",
@@ -61,6 +64,8 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+
+
 }
 
 // function to initialize program
