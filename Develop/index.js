@@ -3,12 +3,12 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./generateMarkdown.js");
 const util = require("util");
-const writeFileAsync = util.promisify(fs.writeFile);
+const path = require("path");
 
 
 
 const questions = [
-    inquirer.prompt([
+    
         {
             type: "input",
             message:"What is your github name",
@@ -56,21 +56,21 @@ const questions = [
             type: "input",
             message: "What does the user need to know about contributing to the repo",
             name: "contribution"
-        },
-
-    ])
-
+        }
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
-
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
 
 }
 
 // function to initialize program
 function init() {
-
+    inquirer.prompt(questions).then(answers => {
+        console.log("generating markdown")
+        writeToFile("README.md", generateMarkdown({...answers}))
+    })
 }
 
 // function call to initialize program
