@@ -1,6 +1,6 @@
 function renderBadge(license){
   if (license != "None"){
-    return `![GitHub license](https://img.sheilds.io/badge/license-${license}-blue.svg)`
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
   }
   return ""
 }
@@ -22,6 +22,8 @@ function renderSection(license){
 function generateMarkdown(data) {
   return `# ${data.title}
   ${renderBadge(data.license)}
+  ${renderLink(data.license)}
+  ${renderSection(data.license)}
 
   ## description
   #${data.description}
@@ -29,23 +31,22 @@ function generateMarkdown(data) {
   ## install
   #${data.install}
 
-  ## usage
-  #${data.usage}
 
   ## GitHub name
   #${data.name}
 
+
   ## license
   #${data.license}
 
-  ## badges
-  #${data.badges}
 
   ## contribution
   #${data.contribution}
 
+
   ## tests
   #${data.test}
+
 
   ## Need to Know
   #${data.needToKnow}
