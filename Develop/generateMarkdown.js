@@ -26,14 +26,28 @@ function generateMarkdown(data) {
   ## description
   #${data.description}
 
-
+  ## install
   #${data.install}
+
+  ## usage
   #${data.usage}
+
+  ## GitHub name
   #${data.name}
+
+  ## license
   #${data.license}
+
+  ## badges
   #${data.badges}
+
+  ## contribution
   #${data.contribution}
+
+  ## tests
   #${data.tests}
+
+  ## Need to Know
   #${data.needToKnow}
 
   ## questions
