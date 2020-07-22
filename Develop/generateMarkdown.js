@@ -45,13 +45,13 @@ function generateMarkdown(data) {
   #${data.contribution}
 
   ## tests
-  #${data.tests}
+  #${data.test}
 
   ## Need to Know
   #${data.needToKnow}
 
   ## questions
-  if you have any questions about the repo contact me at ${data.email}. you can find more of my projects at ${data.github}
+  if you have any questions about the repo contact me at ${data.email}. you can find more of my projects at ${data.name}
 
 `;
 }
